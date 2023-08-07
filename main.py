@@ -103,7 +103,7 @@ def main(_user, _passwd, _step):
         return "login fail!"
     
     t = jd_time()
-    print("时间 : "+ t)
+    print(t)
     app_token = get_app_token(login_token)
 
     today = time.strftime("%F")
