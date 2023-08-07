@@ -101,8 +101,8 @@ def main(_user, _passwd, _step):
     if login_token == 0:
         print("登陆失败！")
         return "login fail!"
-    print(jd_time())
-    t = 1691394107782
+    
+    t = jd_time()
 
     app_token = get_app_token(login_token)
 
