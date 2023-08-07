@@ -19,6 +19,14 @@ headers = {
     'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/20.6.18)'
 }
 
+def jd_time():
+    """
+    从京东服务器获取时间戳
+    """
+    url = 'https://api.m.jd.com'
+    resp = requests.get(url, verify=False)
+    jd_timestamp = int(resp.headers.get('X-API-Request-Id')[-13:])
+    return jd_timestamp
 
 def get_code(location):
     """
@@ -93,8 +101,8 @@ def main(_user, _passwd, _step):
     if login_token == 0:
         print("登陆失败！")
         return "login fail!"
-
-    t = get_time()
+    print(jd_time())
+    t = 1691394107782
 
     app_token = get_app_token(login_token)
 
